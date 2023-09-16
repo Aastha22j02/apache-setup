@@ -13,7 +13,7 @@ Before you begin, make sure you have the following prerequisites:
    sudo apt-get update
    sudo apt-get install python3-pip apache2 libapache2-mod-wsgi-py3
    ```
-
+note - libapache2-mod-wsgi-py3 this modul only for Python3 interpreter.
 ## Create a Python Virtual Environment
 
 We'll use `virtualenv` to create a Python virtual environment. Install it using `pip3`:
