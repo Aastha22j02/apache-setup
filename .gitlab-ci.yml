@@ -1,0 +1,25 @@
+stages:
+  - test
+
+unit_tests:
+  stage: test
+  tags:
+    - shell
+  when: manual
+  script:
+    - ls
+    # - sudo apt-get update -y
+    # - sudo apt-get install -y libpq-dev
+    # - sudo cd /home/ubuntu/twitter-clone-myApp
+    - source env-twitter/bin/activate
+    - pip install -r requirements.txt
+   
+    - python3 manage.py test >> junit.xml
+    # - source env-twitter/bin/deactivate
+
+  artifacts:
+    when: always
+    paths:
+      - junit.xml
+    reports:
+      junit: junit.xml
